@@ -1,0 +1,7 @@
+models:
+  - name: prc_montly_sales_make
+    description: "Modelo intermedio que agrupa las ventas de manera mensual por marca del auto y vendedor"
+    columns:
+      - name: DDATE
+        description: "Solo se encuentran fechas de inicio de cada mes"
+        
