@@ -1,0 +1,30 @@
+version: 2
+
+sources:
+  - name: raw_bi_car
+    database: DATABOOSTERS
+    schema: PUBLIC
+    tables:
+      - name: CAR_SALES
+        description: 'Tabla de datos de ventas desde la DB transaccional.'
+        columns:
+          - name: 	DDATE 
+            description: 'Fecha de la compra del vehículo.'
+          - name: SALESPERSON
+            description: 'Nombre del venderor del vehiculo.'
+            tests:
+              - not_null
+          - name: CUSTOMERNAME
+            description: 'Nombre del cliente que compró el vehículo.'
+          - name: CARMAKE
+            description: 'Nombre de la marca del vehículo.'
+          - name: CARMODEL
+            description: 'Modelo del vehículo.'
+          - name: CARYEAR
+            description: 'Año del modelo del vehículo.'
+          - name: SALEPRICE
+            description: 'Precio de venta del vehículo.'
+          - name: COMMISSIONRATE
+            description: 'Porcentaje de la comisión de venta.'
+          - name: COMMISSIONEARNED
+            description: 'Comisión ganada por la venta'
