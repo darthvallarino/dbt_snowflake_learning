@@ -8,7 +8,7 @@ SELECT
     DDATE,
     ID_SALESPERSON,
     ID_CARMAKE,
-    TOTALSALE
+    TOTALSALE,
     TOTALCOM
 FROM {{ref('prc_montly_sales_make')}} AS prcm
 LEFT JOIN {{ref('dim_carmake')}} AS dimc ON prcm.CARMAKE = dimc.CARMAKE

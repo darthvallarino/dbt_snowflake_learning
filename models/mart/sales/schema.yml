@@ -13,6 +13,11 @@ models:
         description: "Nombre de la marca del vehículo"
         tests:
           - not_null
+          - accepted_values:
+              arguments: 
+                values: ['Toyota', 'Honda', 'Ford', 'Nisan', 'Chevrolet', 'BMW', 'Mercedes-Benz', 'Audi', 'Volkswagen']
+                config: 
+                  severity: warn
   - name: dim_saleperson
     description: "Dimensión de vendedores, contiene clave única para cada vendedor"
     columns:
@@ -26,7 +31,7 @@ models:
         tests:
           - not_null
 
-  - name: fct_monthly_sales
+  - name: ftc_monthly_sales
     description: "Tabla de hechos que consolida las ventas mensuales agregadas por vendedor y marca de vehículo usando claves de dimensión"
     columns:
       - name: DDATE
@@ -38,15 +43,17 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('dim_saleperson')
-              field: ID_SALESPERSON
+              arguments: 
+                to: ref('dim_saleperson')
+                field: ID_SALESPERSON
       - name: ID_CARMAKE
         description: "Clave foránea a la dimensión de marcas (dim_sarmake)."
         tests:
           - not_null
           - relationships:
-              to: ref('dim_carmake')
-              field: ID_CARMAKE
+              arguments:
+                to: ref('dim_carmake')
+                field: ID_CARMAKE
       - name: TOTALSALE
         description: "Monto total para la venta de ese mes, vendedor y marca."
       - name: TOTALCOM
