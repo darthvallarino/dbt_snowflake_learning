@@ -28,3 +28,13 @@ sources:
             description: 'Porcentaje de la comisión de venta.'
           - name: COMMISSIONEARNED
             description: 'Comisión ganada por la venta'
+      - name: SALESPERSON
+        description: 'Tabla de vendedores'
+      - name: MARKETING_PIVOTED_PERFORMANCE
+        description: 'Tabla de marketing'
+      - name: REGIONAL_SALES_APAC
+        description: 'Tabla de marketing'
+      - name: REGIONAL_SALES_EU
+        description: 'Tabla de marketing'
+      - name: REGIONAL_SALES_NA
+        description: 'Tabla de marketing'
